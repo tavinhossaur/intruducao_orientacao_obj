@@ -1,0 +1,110 @@
+classe ControleRemoto implementa Controlador
+
+------------------------------------------------------
+// Atributos
+------------------------------------------------------
+privado inteiro volume 
+privado lógico tocando
+privado lógico ligado
+
+------------------------------------------------------
+// Métodos especiais
+------------------------------------------------------
+publico Método Construtor()
+    volume = 50
+    tocando = falso
+    ligado = falso
+fimMétodo
+
+------------------------------------------------------
+// Getters
+------------------------------------------------------
+
+publico Método getVolume()
+    retorne volume
+fimMétodo    
+
+publico Método getTocando()
+    retorne tocando
+fimMétodo   
+
+publico Método getLigado()
+    retorne ligado
+fimMétodo   
+
+------------------------------------------------------
+// Setters
+------------------------------------------------------
+publico Método setVolume(v : inteiro)
+    volume = v
+fimMétodo
+
+publico Método setTocando(t : lógico)
+    tocando = v
+fimMétodo
+
+publico Método setLigado(l : lógico)
+    ligado = v
+fimMétodo
+
+------------------------------------------------------
+Sobrescrevendo métodos (Override)
+------------------------------------------------------
+publico Método ligar()
+    setLigado(l = verdadeiro)
+fimMétodo
+
+publico Método desligar()
+    setLigado(l = falso)
+fimMétodo
+
+publico Método abrirMenu()
+    escreva(getLigado())
+    escreva(getTocando())
+
+    Para i = 0 ate getVolume() passo 10 faça
+        escreva("|")
+    fimPara    
+fimMétodo
+
+publico Método fecharMenu()
+    escreva("Fechando menu...")
+fimMétodo
+
+publico Método maisVolume()
+    Se (getLigado()) entao
+        setVolume(getVolume() + 1)
+    fimSe
+fimMétodo
+
+publico Método menosVolume()
+    Se (getLigado()) entao
+        setVolume(getVolume() - 1)
+    fimSe
+fimMétodo
+
+publico Método ligarMudo()
+    Se (getLigado() e getVolume() > 0) entao
+        setVolume(0)
+    fimSe
+fimMétodo
+
+publico Método desligarMudo()
+    Se (getLigado() e getVolume() == 0) entao
+        setVolume(50)
+    fimSe
+fimMétodo
+
+publico Método play()
+    Se (getLigado() e não getTocando()) entao
+        setTocando(verdadeiro)
+    fimSe
+fimMétodo
+
+publico Método pause()
+    Se (getLigado() e getTocando()) entao
+        setTocando(falso)
+    fimSe
+fimMétodo
+
+fimClasse

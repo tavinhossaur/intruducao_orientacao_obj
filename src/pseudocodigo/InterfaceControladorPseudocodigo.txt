@@ -1,0 +1,16 @@
+interface Controlador
+
+// Métodos abstratos
+
+publico abstrato Método ligar()
+publico abstrato Método desligar()
+publico abstrato Método abrirMenu()
+publico abstrato Método fecharMenu()
+publico abstrato Método maisVolume()
+publico abstrato Método menosVolume()
+publico abstrato Método ligarMudo()
+publico abstrato Método desligarMudo()
+publico abstrato Método play()
+publico abstrato Método pause()
+
+fim interface
